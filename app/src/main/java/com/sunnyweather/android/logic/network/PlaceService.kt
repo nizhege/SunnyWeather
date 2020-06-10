@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 /**
  * @ClassName PlaceService
- * @Description TODO
+ * @Description 网络访问接口
  * @Author Zhe
  * @Date 2020/6/9 17:18
  */
