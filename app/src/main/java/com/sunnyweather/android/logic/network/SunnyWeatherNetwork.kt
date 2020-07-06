@@ -10,7 +10,7 @@ import kotlin.coroutines.suspendCoroutine
 
 /**
  * @ClassName SunnyWeatherNetwork
- * @Description TODO
+ * @Description 网络请求
  * @Author Zhe
  * @Date 2020/6/10 20:32
  */
@@ -21,7 +21,7 @@ object SunnyWeatherNetwork {
     suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
 
     private suspend fun <T> Call<T>.await():T{
-        return suspendCoroutine {continuation ->
+        return suspendCoroutine { continuation ->
             enqueue(object :Callback<T>{
                 override fun onResponse(call: Call<T>, response: Response<T>) {
                     val body = response.body()
